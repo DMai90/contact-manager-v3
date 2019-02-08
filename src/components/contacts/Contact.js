@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Consumer } from '../context';
+import { Consumer } from '../../context';
 
 class Contact extends Component {
   state = {
@@ -26,7 +26,7 @@ class Contact extends Component {
 
           return (
             <div className="card mb-3">
-              <h4 className="card-header">
+              <h4 className="card-header bg-light">
                 {name}{' '}
                 <i
                   onClick={this.onShowClick}
