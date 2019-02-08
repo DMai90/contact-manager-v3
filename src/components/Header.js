@@ -18,9 +18,9 @@ const Header = props => {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
+            <li className="nav-item" id="nav-home">
               <a href="/" className="nav-link">
-                Home
+                <i className="fas fa-home" /> Home
               </a>
             </li>
           </ul>
