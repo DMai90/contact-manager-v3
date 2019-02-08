@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context';
+import TextInputGroup from '../layout/TextInputGroup';
 import uuid from 'uuid';
 
 class AddContact extends Component {
@@ -44,53 +45,30 @@ class AddContact extends Component {
               <div className="card-header">Add Contact</div>
               <div className="card-body">
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                  <div className="form-group">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">Name</span>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        name="name"
-                        placeholder="Enter Name..."
-                        value={name}
-                        onChange={this.onChange}
-                      />
-                    </div>
-                  </div>
+                  <TextInputGroup
+                    prepend="Name"
+                    name="name"
+                    placeholder="Enter Name..."
+                    value={name}
+                    onChange={this.onChange}
+                  />
 
-                  <div className="form-group">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">Email</span>
-                      </div>
-                      <input
-                        type="email"
-                        className="form-control form-control-lg"
-                        name="email"
-                        placeholder="Enter Email..."
-                        value={email}
-                        onChange={this.onChange}
-                      />
-                    </div>
-                  </div>
+                  <TextInputGroup
+                    prepend="Email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter Email..."
+                    value={email}
+                    onChange={this.onChange}
+                  />
 
-                  <div className="form-group">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">Phone</span>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        name="phone"
-                        placeholder="Enter Phone..."
-                        value={phone}
-                        onChange={this.onChange}
-                      />
-                    </div>
-                  </div>
+                  <TextInputGroup
+                    prepend="Phone"
+                    name="phone"
+                    placeholder="Enter Phone..."
+                    value={phone}
+                    onChange={this.onChange}
+                  />
 
                   <input
                     type="submit"
