@@ -5,9 +5,15 @@ class Contact extends Component {
   state = {
     showContactInfo: false
   };
-  onShowClick = e => {
+
+  onShowClick = () => {
     this.setState({ showContactInfo: !this.state.showContactInfo });
   };
+
+  onDeleteClick = e => {
+    console.log(e);
+  };
+
   render() {
     const { name, email, phone } = this.props.contact;
     const { showContactInfo } = this.state;
@@ -15,7 +21,17 @@ class Contact extends Component {
     return (
       <div className="card mb-3">
         <h4 className="card-header">
-          {name} <i onClick={this.onShowClick} className="fas fa-sort-down" />
+          {name}{' '}
+          <i
+            onClick={this.onShowClick}
+            className="fas fa-sort-down"
+            style={{ cursor: 'pointer' }}
+          />
+          <i
+            className="fas fa-times"
+            style={{ cursor: 'pointer', float: 'right', color: 'red' }}
+            onClick={this.onDeleteClick}
+          />
         </h4>
         {showContactInfo ? (
           <div className="card-body">
