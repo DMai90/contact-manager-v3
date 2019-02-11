@@ -61,46 +61,51 @@ class AddContact extends Component {
         {value => {
           const { dispatch } = value;
           return (
-            <div className="card mb-3">
-              <h4 className="card-header">Add Contact</h4>
-              <div className="card-body">
-                <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                  <TextInputGroup
-                    prepend="Name"
-                    name="name"
-                    placeholder="Enter Name..."
-                    value={name}
-                    onChange={this.onChange}
-                    error={errors.name}
-                  />
+            <React.Fragment>
+              <h1 className="display-4 mb-2">
+                <span className="text-danger">Add </span>Contact
+              </h1>
+              <div className="card mb-3">
+                <h4 className="card-header">Contact Information</h4>
+                <div className="card-body">
+                  <form onSubmit={this.onSubmit.bind(this, dispatch)}>
+                    <TextInputGroup
+                      prepend="Name"
+                      name="name"
+                      placeholder="Enter Name..."
+                      value={name}
+                      onChange={this.onChange}
+                      error={errors.name}
+                    />
 
-                  <TextInputGroup
-                    prepend="Email"
-                    name="email"
-                    type="email"
-                    placeholder="Enter Email..."
-                    value={email}
-                    onChange={this.onChange}
-                    error={errors.email}
-                  />
+                    <TextInputGroup
+                      prepend="Email"
+                      name="email"
+                      type="email"
+                      placeholder="Enter Email..."
+                      value={email}
+                      onChange={this.onChange}
+                      error={errors.email}
+                    />
 
-                  <TextInputGroup
-                    prepend="Phone"
-                    name="phone"
-                    placeholder="Enter Phone..."
-                    value={phone}
-                    onChange={this.onChange}
-                    error={errors.phone}
-                  />
+                    <TextInputGroup
+                      prepend="Phone"
+                      name="phone"
+                      placeholder="Enter Phone..."
+                      value={phone}
+                      onChange={this.onChange}
+                      error={errors.phone}
+                    />
 
-                  <input
-                    type="submit"
-                    className="btn btn-block btn-light"
-                    value="Submit"
-                  />
-                </form>
+                    <input
+                      type="submit"
+                      className="btn btn-block btn-light"
+                      value="Submit"
+                    />
+                  </form>
+                </div>
               </div>
-            </div>
+            </React.Fragment>
           );
         }}
       </Consumer>
