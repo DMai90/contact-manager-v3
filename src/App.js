@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import HomePage from './components/layout/HomePage';
 import Contacts from './components/contacts/Contacts';
 import AddContact from './components/contacts/AddContact';
@@ -30,6 +31,7 @@ class App extends Component {
                 <Route component={NotFound} />
               </Switch>
             </div>
+            {/* <Footer /> */}
           </div>
         </Router>
       </Provider>

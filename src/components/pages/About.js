@@ -18,6 +18,7 @@ const About = () => {
         <li>React Context API</li>
         <li>React-Router-Dom</li>
         <li>Axios</li>
+        <li>JSON Placeholder API</li>
       </ul>
     </React.Fragment>
   );
