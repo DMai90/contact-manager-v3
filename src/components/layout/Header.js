@@ -19,17 +19,22 @@ const Header = props => {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item" id="nav-home">
+            <li className="nav-item px-2" id="nav-home">
               <Link to="/" className="nav-link">
                 <i className="fas fa-home" /> Home
               </Link>
             </li>
-            <li className="nav-item" id="nav-add">
+            <li className="nav-item px-2" id="nav-home">
+              <Link to="/contactlist" className="nav-link">
+                <i className="fas fa-address-book" /> Contact List
+              </Link>
+            </li>
+            <li className="nav-item px-2" id="nav-add">
               <Link to="/contact/add" className="nav-link">
                 <i className="fas fa-plus" /> Add
               </Link>
             </li>
-            <li className="nav-item" id="nav-about">
+            <li className="nav-item px-2" id="nav-about">
               <Link to="/about" className="nav-link">
                 <i className="fas fa-question" /> About
               </Link>

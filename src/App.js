@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Contacts from './components/contacts/Contacts';
 import Header from './components/layout/Header';
+import HomePage from './components/layout/HomePage';
+import Contacts from './components/contacts/Contacts';
 import AddContact from './components/contacts/AddContact';
 import EditContact from './components/contacts/EditContact';
 import About from './components/pages/About';
@@ -21,7 +22,8 @@ class App extends Component {
             <Header branding="Contact Manager V3.0" />
             <div className="container">
               <Switch>
-                <Route exact path="/" component={Contacts} />
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/contactlist" component={Contacts} />
                 <Route exact path="/contact/add" component={AddContact} />
                 <Route exact path="/contact/edit/:id" component={EditContact} />
                 <Route exact path="/about" component={About} />

@@ -1,3 +1,7 @@
 .navbar {
   border-bottom: #000 3px solid;
 }
+
+#homePage {
+  padding-top: 100px;
+}
