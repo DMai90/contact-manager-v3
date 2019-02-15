@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
+import AddContactModal from '../modals/AddContactModal';
 import { Consumer } from '../../context';
-import { Link } from 'react-router-dom';
 
 class Contacts extends Component {
   render() {
@@ -18,11 +18,15 @@ class Contacts extends Component {
                   </h1>
                 </div>
                 <div className="item-hl ml-auto pt-3">
-                  <Link to="/contact/add">
-                    <button className="btn btn-danger">
-                      <i className="fas fa-plus" /> Add New Contact
-                    </button>
-                  </Link>
+                  <button
+                    className="btn btn-danger"
+                    // onClick={this.modalHandler}
+                    data-toggle="modal"
+                    data-target="#contactModal"
+                  >
+                    <i className="fas fa-plus" /> Add New Contact
+                  </button>
+                  <AddContactModal />
                 </div>
               </div>
 

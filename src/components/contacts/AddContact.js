@@ -53,7 +53,7 @@ class AddContact extends Component {
     });
 
     // Redirect
-    this.props.history.push('/');
+    this.props.history.push('/contactlist');
   };
 
   render() {
