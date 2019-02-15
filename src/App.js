@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
 import HomePage from './components/layout/HomePage';
 import Contacts from './components/contacts/Contacts';
 import AddContact from './components/contacts/AddContact';
@@ -10,7 +9,6 @@ import NotFound from './components/pages/NotFound';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { Provider } from './context';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -20,7 +18,7 @@ class App extends Component {
       <Provider>
         <Router>
           <div className="App">
-            <Header branding="Contact Manager V3.0" />
+            <Header branding="Contact Manager" />
             <div className="container">
               <Switch>
                 <Route exact path="/" component={HomePage} />
@@ -31,7 +29,6 @@ class App extends Component {
                 <Route component={NotFound} />
               </Switch>
             </div>
-            {/* <Footer /> */}
           </div>
         </Router>
       </Provider>

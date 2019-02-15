@@ -63,7 +63,7 @@ class AddContactModal extends Component {
 
           return (
             <div className="modal fade" id="contactModal">
-              <div className="modal-dialog">
+              <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                   <div className="modal-header bg-danger text-white">
                     <h4 className="modal-title">Add New Contact</h4>
@@ -103,7 +103,7 @@ class AddContactModal extends Component {
 
                       <input
                         type="submit"
-                        className="btn btn-block btn-light"
+                        className="btn btn-block btn-outline-danger"
                         value="Submit"
                       />
                     </form>

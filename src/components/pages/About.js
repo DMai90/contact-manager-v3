@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../layout/Footer';
 
 const About = () => {
   return (
@@ -19,7 +20,9 @@ const About = () => {
         <li>React-Router-Dom</li>
         <li>Axios</li>
         <li>JSON Placeholder API</li>
+        <li>Classnames API</li>
       </ul>
+      <Footer />
     </React.Fragment>
   );
 };

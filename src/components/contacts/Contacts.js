@@ -20,7 +20,6 @@ class Contacts extends Component {
                 <div className="item-hl ml-auto pt-3">
                   <button
                     className="btn btn-danger"
-                    // onClick={this.modalHandler}
                     data-toggle="modal"
                     data-target="#contactModal"
                   >

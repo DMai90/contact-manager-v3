@@ -2,14 +2,18 @@
   border-bottom: #000 3px solid;
 }
 
+.modal-header {
+  border-bottom: #000 3px solid;
+}
+
 #homePage {
   padding-top: 100px;
 }
 
-/* footer {
+.footer {
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
   width: 100%;
-} */
+}
