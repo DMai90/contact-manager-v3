@@ -21,6 +21,7 @@ class Contact extends Component {
 
   render() {
     const { id, name, email, phone } = this.props.contact;
+    const { street, suite, city, zipcode } = this.props.contact.address;
     const { showContactInfo } = this.state;
 
     return (
@@ -57,6 +58,10 @@ class Contact extends Component {
               {showContactInfo ? (
                 <div className="card-body">
                   <ul className="list-group">
+                    <li className="list-group-item">Street: {street}</li>
+                    <li className="list-group-item">Suite: {suite}</li>
+                    <li className="list-group-item">City: {city}</li>
+                    <li className="list-group-item">Zip Code: {zipcode}</li>
                     <li className="list-group-item">Email: {email}</li>
                     <li className="list-group-item">Phone: {phone}</li>
                   </ul>
