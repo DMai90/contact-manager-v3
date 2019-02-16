@@ -8,6 +8,12 @@ class EditContact extends Component {
     name: '',
     email: '',
     phone: '',
+    address: {
+      street: '',
+      suite: '',
+      city: '',
+      zipcode: ''
+    },
     errors: {}
   };
 
@@ -17,11 +23,17 @@ class EditContact extends Component {
       `https://jsonplaceholder.typicode.com/users/${id}`
     );
 
-    // const contact = res.data;
     const { name, email, phone } = res.data;
+    const { street, suite, city, zipcode } = res.data.address;
 
     this.setState({
       name,
+      address: {
+        street,
+        suite,
+        city,
+        zipcode
+      },
       email,
       phone
     });
@@ -29,14 +41,36 @@ class EditContact extends Component {
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
+  onChangeAddress = e =>
+    this.setState({
+      address: { ...this.state.address, [e.target.name]: e.target.value }
+    });
+
   onSubmit = async (dispatch, e) => {
     e.preventDefault();
 
     const { name, email, phone } = this.state;
+    const { street, suite, city, zipcode } = this.state.address;
 
     // Check Input Fields
     if (name === '') {
       this.setState({ errors: { name: 'Name is required' } });
+      return;
+    }
+    if (street === '') {
+      this.setState({ errors: { street: 'Street is required' } });
+      return;
+    }
+    if (suite === '') {
+      this.setState({ errors: { suite: 'Suite is required' } });
+      return;
+    }
+    if (city === '') {
+      this.setState({ errors: { city: 'City is required' } });
+      return;
+    }
+    if (zipcode === '') {
+      this.setState({ errors: { zipcode: 'Zip code is required' } });
       return;
     }
     if (email === '') {
@@ -50,6 +84,12 @@ class EditContact extends Component {
 
     const updContact = {
       name,
+      address: {
+        street,
+        suite,
+        city,
+        zipcode
+      },
       email,
       phone
     };
@@ -66,17 +106,24 @@ class EditContact extends Component {
     // Clear State
     this.setState({
       name: '',
+      address: {
+        street: '',
+        suite: '',
+        city: '',
+        zipcode: ''
+      },
       email: '',
       phone: '',
       errors: {}
     });
 
     // Redirect
-    this.props.history.push('/');
+    this.props.history.push('/contactlist');
   };
 
   render() {
     const { name, email, phone, errors } = this.state;
+    const { street, suite, city, zipcode } = this.state.address;
 
     return (
       <Consumer>
@@ -98,6 +145,42 @@ class EditContact extends Component {
                       value={name}
                       onChange={this.onChange}
                       error={errors.name}
+                    />
+
+                    <TextInputGroup
+                      prepend="Street"
+                      name="street"
+                      placeholder="Enter Street..."
+                      value={street}
+                      onChange={this.onChangeAddress}
+                      error={errors.street}
+                    />
+
+                    <TextInputGroup
+                      prepend="Suite"
+                      name="suite"
+                      placeholder="Enter Suite..."
+                      value={suite}
+                      onChange={this.onChangeAddress}
+                      error={errors.suite}
+                    />
+
+                    <TextInputGroup
+                      prepend="City"
+                      name="city"
+                      placeholder="Enter City..."
+                      value={city}
+                      onChange={this.onChangeAddress}
+                      error={errors.city}
+                    />
+
+                    <TextInputGroup
+                      prepend="Zip Code"
+                      name="zipcode"
+                      placeholder="Enter Zip Code..."
+                      value={zipcode}
+                      onChange={this.onChangeAddress}
+                      error={errors.zipcode}
                     />
 
                     <TextInputGroup
