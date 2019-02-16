@@ -204,7 +204,7 @@ class EditContact extends Component {
 
                     <input
                       type="submit"
-                      className="btn btn-block btn-light"
+                      className="btn btn-block btn-outline-danger"
                       value="Update Contact"
                     />
                   </form>
