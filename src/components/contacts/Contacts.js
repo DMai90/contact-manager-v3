@@ -22,6 +22,7 @@ class Contacts extends Component {
                     className="btn btn-danger"
                     data-toggle="modal"
                     data-target="#contactModal"
+                    id="modalBtn"
                   >
                     <i className="fas fa-plus" /> Add New Contact
                   </button>

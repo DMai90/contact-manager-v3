@@ -79,6 +79,7 @@ class AddContactModal extends Component {
 
     dispatch({ type: 'ADD_CONTACT', payload: res.data });
 
+    document.getElementById('modalBtn').click();
     // Clear State
     this.setState({
       name: '',
